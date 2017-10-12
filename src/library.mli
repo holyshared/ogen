@@ -7,3 +7,4 @@ val create: ?public_name:string
 val name: t -> string
 val public_name: t -> string option
 val libraries: t -> string list
+val to_sexp: t -> Sexplib.Sexp.t

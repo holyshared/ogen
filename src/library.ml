@@ -20,15 +20,26 @@ let libraries t = t.libraries
 let to_sexp t =
   let define_of_field name = Sexp.Atom name in
   let string_of_field name v = Sexp.List [ Sexp.Atom name; Sexp.Atom v] in
+  let string_list_of_field name v =
+    Sexp.List [ Sexp.Atom name; Sexp.List (ListLabels.map (fun v -> define_of_field v) v)] in
   let option_string_of_field name v ov = match v with
     | Some v -> Sexp.List [ Sexp.Atom name; Sexp.Atom v]
     | None -> Sexp.List [ Sexp.Atom name; Sexp.Atom ov] in
   let add_field ~field out = field::out in
+  let fields v =
+    let list_sexp_of v = Sexp.List (List.rev v) in
+    v
+    |> add_field ~field:(option_string_of_field "public_name" t.public_name t.name)
+    |> add_field ~field:(string_of_field "name" t.name)
+    |> add_field ~field:(string_list_of_field "libraries" t.libraries)
+    |> list_sexp_of in
   let pack v =
     v
     |> add_field ~field:(define_of_field "library")
-    |> add_field ~field:(option_string_of_field "public_name" t.public_name t.name)
-    |> add_field ~field:(string_of_field "name" t.name) in
-  Sexp.List (pack [])
+    |> fun v -> (fields [])::v in
+  Sexp.List (List.rev (pack []))
+
+let to_string t =
+  Sexp.to_string (to_sexp t)
 
 let save t ~dir = ()
