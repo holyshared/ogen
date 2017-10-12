@@ -1,4 +1,8 @@
 (jbuild_version 1)
 
-(library
-  ((name project)))
+(library (
+  (public_name ogen.project)
+  (name project)
+  (libraries (sexplib))
+  (modules (library_project library))
+))
