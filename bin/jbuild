@@ -1,7 +1,7 @@
 (jbuild_version 1)
 
 (executables(
-  (names (generator_main))
+  (names (ogen))
   (public_names (ogen))
-  (libraries (project))
+  (libraries (ogen.project))
 ))

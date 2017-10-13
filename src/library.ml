@@ -6,11 +6,11 @@ type t = {
   libraries: string list
 }
 
-let create ?public_name ?(libraries=[]) ~name =
+let create ?pub_name ?(libs=[]) ~name =
   {
     name = name;
-    public_name = public_name;
-    libraries = libraries
+    public_name = pub_name;
+    libraries = libs
   }
 
 let name t = t.name
