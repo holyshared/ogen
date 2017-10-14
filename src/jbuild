@@ -4,6 +4,5 @@
   (public_name ogen.project)
   (name project)
   (libraries (sexplib))
-  (modules (library_project library version jbuilder_library))
+  (modules (library_project library version jbuilder_library file))
 ))
-
