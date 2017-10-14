@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+make clean
+make build
+_build/install/default/bin/ogen --help
+_build/install/default/bin/ogen -o mylib mylib

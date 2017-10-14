@@ -2,7 +2,7 @@
 
 (executable (
   (name test)
-  (libraries (ounit project))
+  (libraries (ounit ogen.project))
 ))
 
 (alias
