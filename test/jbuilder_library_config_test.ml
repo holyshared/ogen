@@ -1,6 +1,8 @@
 open Sexplib
 open OUnit2
-open Project
+open Ogen_project
+
+module Library = Jbuilder_library_config
 
 let test_library_conf ctx =
   let name_by s = Library.create ~name:s ~pub_name:s ~libs:[] in

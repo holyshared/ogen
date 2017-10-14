@@ -1,3 +1,6 @@
+module Version = Jbuilder_version_config
+module Library = Jbuilder_library_config
+
 let build_content ?pub_name ?(libs=[]) ~name =
   let version = Version.create () in
   let library_conf = Library.create ?pub_name ~name ~libs in

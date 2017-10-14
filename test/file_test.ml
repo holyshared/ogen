@@ -1,5 +1,5 @@
 open OUnit2
-open Project
+open Ogen_project
 
 let test_file ctx =
   let dir = bracket_tmpdir ctx in
