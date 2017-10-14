@@ -2,8 +2,7 @@
 
 (library (
   (public_name ogen.project)
-  (name project)
+  (name ogen_project)
   (libraries (sexplib))
-  (modules (library_project library version jbuilder_library))
+  (modules (library_project jbuilder_library_config jbuilder_version_config jbuilder_library file module_file))
 ))
-
