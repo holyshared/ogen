@@ -1,5 +1,5 @@
 open Arg
-open Project
+open Ogen_project
 
 (* Name of library *)
 let name = ref ""

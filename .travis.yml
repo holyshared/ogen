@@ -1,0 +1,14 @@
+language: c
+sudo: required
+dist: trusty
+services:
+  - docker
+install:
+  - docker-compose build
+script:
+  - docker-compose run ocaml bash -e .travis/test
+matrix:
+  fast_finish: true
+notifications:
+  email: false
+
