@@ -51,7 +51,7 @@ let close t =
 
 let path t = t.path
 
-let puts ~s path =
+let puts ~path s =
   create path
   |> bind ~f:(write_string ~s)
   |> bind ~f:close
