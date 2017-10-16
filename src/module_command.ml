@@ -7,17 +7,15 @@
 
 open Arg
 
-let name = "lib"
-let description = "lib"
+let name = "mod"
+let description = "mod"
 
-let lib_name = ref None
+let mod_name = ref None
 
-let pub_name = ref None
 let output = ref None
 
 let args_spec = [
-  ("-p", String (fun s -> pub_name := Some s), "Public name of library");
-  ("-o", String (fun s -> output := Some s), "Library output directory")
+  ("-d", String (fun s -> output := Some s), "Module output directory")
 ]
 
 let mkdir dir =
@@ -35,23 +33,21 @@ let output_dir_from_cwd () =
         mkdir outout_dir
     | None -> Sys.getcwd ()
 
-
-let gen_if_lib_name_specified ~f () =
-  match !lib_name with
+let gen_if_mod_name_specified ~f () =
+  match !mod_name with
     | Some name -> f ~name
     | None -> Error "oops!!"
 
 let gen () =
   let output_dir = output_dir_from_cwd () in
-  let config_gen = Jbuilder_library.generate ~dir:output_dir
-    |> (fun gen -> gen ?pub_name:!pub_name)
-    |> (fun gen -> gen ()) in
-  print_endline ("output directory: " ^ output_dir);
-  gen_if_lib_name_specified ~f:config_gen ()
+  let mod_gen = Module_file.generate ~dir:output_dir
+    |> (fun gf -> gf ~content:"")
+    |> (fun gf -> gf ()) in
+  gen_if_mod_name_specified ~f:mod_gen ()
 
-(* ogen lib -p foo -o foo foo *)
+(* ogen mod -d foo foo *)
 let run ~gopts =
-  parse args_spec (fun s -> lib_name := Some s) "ogen [GLOBAL_OPTIONS] lib [OPTIONS] [LIB_NAME]\n";
+  parse args_spec (fun s -> mod_name := Some s) "ogen [GLOBAL_OPTIONS] mod [OPTIONS] [MODULE_NAME]\n";
   match gen () with
     | Ok _ -> print_endline "ok"
     | Error e ->
