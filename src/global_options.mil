@@ -1,1 +1,5 @@
 type t
+
+val spec: (Arg.key * Arg.spec * Arg.doc) list
+val get: unit -> t
+val usage_string: unit -> string
