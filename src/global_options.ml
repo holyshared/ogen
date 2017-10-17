@@ -16,4 +16,4 @@ let get () =
   }
 
 let usage_string () =
-  usage_string spec "GLOBAL_OPTIONS\n"
+  "GlobalOptions:"

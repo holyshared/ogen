@@ -8,7 +8,7 @@
 open Arg
 
 let name = "mod"
-let description = "mod"
+let description = "Generate a module file"
 
 let mod_name = ref None
 

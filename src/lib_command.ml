@@ -8,7 +8,7 @@
 open Arg
 
 let name = "lib"
-let description = "lib"
+let description = "Generate a library file"
 
 let lib_name = ref None
 
