@@ -1,0 +1,11 @@
+B ../_build/default/src/project
+B ../_build/default/tests
+FLG -w -40
+PKG bigarray
+PKG bytes
+PKG oUnit
+PKG oUnit.advanced
+PKG sexplib
+PKG sexplib.0
+PKG unix
+S ../src/project

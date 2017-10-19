@@ -1,0 +1,11 @@
+B ../../_build/default/src/cli
+B ../../_build/default/src/project
+FLG -open Ogen_cli -w -40
+PKG bigarray
+PKG bytes
+PKG cmdliner
+PKG result
+PKG sexplib
+PKG sexplib.0
+PKG unix
+S ../project

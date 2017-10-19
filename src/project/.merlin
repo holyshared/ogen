@@ -1,0 +1,6 @@
+B ../../_build/default/src/project
+FLG -open Ogen_project -w -40
+PKG bigarray
+PKG sexplib
+PKG sexplib.0
+PKG unix

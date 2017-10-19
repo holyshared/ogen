@@ -3,7 +3,7 @@
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
- *)
+*)
 
 module Version = Jbuilder_version_config
 module Library = Jbuilder_library_config
