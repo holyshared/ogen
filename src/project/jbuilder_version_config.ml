@@ -21,4 +21,4 @@ let to_sexp t =
   ]
 
 let to_string t =
-  Sexp.to_string (to_sexp t)
+  Sexp.to_string_hum (to_sexp t)

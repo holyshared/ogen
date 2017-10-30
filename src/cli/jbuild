@@ -1,8 +1,8 @@
 (jbuild_version 1)
 
-  (library (
-      (public_name ogen.cli)
-        (name ogen_cli)
-        (libraries (cmdliner ogen.project))
-        (modules (command common_options library module default))
-    ))
+(library (
+  (public_name ogen.cli)
+  (name ogen_cli)
+  (libraries (cmdliner ogen.project))
+  (modules (command common_options library module default))
+))

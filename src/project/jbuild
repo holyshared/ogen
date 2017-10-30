@@ -1,10 +1,15 @@
 (jbuild_version 1)
 
-  (library (
-      (public_name ogen.project)
-        (name ogen_project)
-        (libraries (sexplib))
-        (modules (library_project jbuilder_library_config
-                    jbuilder_version_config jbuilder_library file directory module_file
-                 ))
-    ))
+(library (
+  (public_name ogen.project)
+  (name ogen_project)
+  (libraries (sexplib))
+  (modules (
+    library_project
+    jbuilder_library_config
+    jbuilder_version_config
+    jbuilder_library
+    module_file
+    file
+    directory))
+))
