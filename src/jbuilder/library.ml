@@ -13,13 +13,13 @@ let is_none v =
 
 type t = {
   name: string;
-  public_name: string option [@default None] [@sexp_drop_if is_none];
-  libraries: string list option [@default None] [@sexp_drop_if is_none];
+  public_name: string sexp_option;
+  libraries: string list sexp_option;
 } [@@deriving sexp]
 
 type config_format = (string * t) [@@deriving sexp]
 
-let create ?pub_name ?libs ~name =
+let create ?pub_name ?libs ~name () =
   {
     name = name;
     public_name = pub_name;

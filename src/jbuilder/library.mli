@@ -11,7 +11,8 @@ type t
 
 val create: ?pub_name:string ->
   ?libs:string list ->
-  name:string -> t
+  name:string ->
+  unit -> t
 
 val name: t -> string
 val public_name: t -> string option

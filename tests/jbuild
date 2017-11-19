@@ -2,7 +2,7 @@
 
 (executable (
   (name test)
-  (libraries (oUnit ogen.project))
+  (libraries (oUnit ogen.file_system ogen.project))
 ))
 
 (alias

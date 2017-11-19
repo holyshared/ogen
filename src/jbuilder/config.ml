@@ -13,7 +13,7 @@ type t =
 
 let build_content ?pub_name ?libs ~name =
   let version = Version.create () in
-  let library = Library.create ?pub_name ?libs ~name in
+  let library = Library.create ?pub_name ?libs ~name () in
   let buf = Buffer.create 1024 in
   Buffer.(
     add_string buf (Version.to_string version);
