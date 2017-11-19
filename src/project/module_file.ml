@@ -5,6 +5,8 @@
  * with this source code in the file LICENSE.
 *)
 
+open Ogen_filesystem
+
 let put_content = function
   | Some v -> v
   | None -> ""

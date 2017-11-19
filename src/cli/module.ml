@@ -7,6 +7,7 @@
 
 open Cmdliner
 open Ogen_project
+open Ogen_filesystem
 
 let generate_module gopts output_dir mod_name =
   let dest_dir = Directory.from_cwd ?output:output_dir () in

@@ -5,7 +5,11 @@
  * with this source code in the file LICENSE.
 *)
 
+open Sexplib
+
 type t
-val create: ?version:int -> unit -> t
-val to_sexp: t -> Sexplib.Sexp.t
+
+val create: ?vnum:int -> unit -> t
+val to_sexp: t -> Sexp.t
+val of_sexp: Sexp.t -> t
 val to_string: t -> string

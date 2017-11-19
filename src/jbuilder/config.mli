@@ -1,3 +1,4 @@
+
 (**
  * Copyright 2017 Noritaka Horio <holy.shared.design@gmail.com>
  *
@@ -5,5 +6,10 @@
  * with this source code in the file LICENSE.
 *)
 
-val mkdir: string -> string
-val from_cwd: ?output:string -> unit -> string
+type t
+
+val generate: ?dir:string ->
+  ?pub_name:string  ->
+  ?libs:string list ->
+  name:string  ->
+  unit -> (unit, string) result

@@ -7,11 +7,12 @@
 
 open Cmdliner
 open Ogen_project
+open Ogen_filesystem
 
 let generate_library gopts pub_name output_dir lib_name =
   let dest_dir = Directory.from_cwd ?output:output_dir () in
   let config_gen = Jbuilder_library.generate ~dir:dest_dir
-                   |> (fun gen -> gen ?pub_name:pub_name)
+                   |> (fun gen -> gen ?pub_name)
                    |> (fun gen -> gen ()) in
   match config_gen ~name:lib_name with
     | Ok _ -> `Ok ()

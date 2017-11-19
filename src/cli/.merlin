@@ -1,11 +1,24 @@
 B ../../_build/default/src/cli
+B ../../_build/default/src/filesystem
+B ../../_build/default/src/jbuilder
 B ../../_build/default/src/project
 FLG -open Ogen_cli -w -40
+PKG base
+PKG base.caml
+PKG base.shadow_stdlib
 PKG bigarray
 PKG bytes
 PKG cmdliner
+PKG ppx_compare.runtime-lib
+PKG ppx_hash.runtime-lib
+PKG re
+PKG re.emacs
+PKG re.str
 PKG result
+PKG sexp_pretty
 PKG sexplib
 PKG sexplib.0
 PKG unix
+S ../filesystem
+S ../jbuilder
 S ../project
