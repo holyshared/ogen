@@ -1,0 +1,6 @@
+B ../../_build/default/src/filesystem
+FLG -open Ogen_filesystem -w -40
+PKG bigarray
+PKG sexplib
+PKG sexplib.0
+PKG unix

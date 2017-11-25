@@ -1,0 +1,19 @@
+B ../../_build/default/src/filesystem
+B ../../_build/default/src/jbuilder
+FLG -open Ogen_jbuilder -w -40
+FLG -ppx '/Users/holyshared/Documents/projects/ocaml-gen/_build/default/.ppx/ppx_sexp_conv+ppx_type_conv+ppx_driver.runner/ppx.exe --as-ppx --cookie '\''library-name="ogen_jbuilder"'\'''
+PKG base
+PKG base.caml
+PKG base.shadow_stdlib
+PKG bigarray
+PKG bytes
+PKG ppx_compare.runtime-lib
+PKG ppx_hash.runtime-lib
+PKG re
+PKG re.emacs
+PKG re.str
+PKG sexp_pretty
+PKG sexplib
+PKG sexplib.0
+PKG unix
+S ../filesystem

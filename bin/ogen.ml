@@ -1,4 +1,7 @@
-open Ogen_project
+open Cmdliner
+open Ogen_cli
+
+let commands = [ Library.term; Module.term ]
 
 let () =
-  Cli.run ()
+  Term.(exit @@ eval_choice Default.term commands)
