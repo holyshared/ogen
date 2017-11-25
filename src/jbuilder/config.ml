@@ -7,23 +7,32 @@
 
 open Ogen_filesystem
 
-type t =
+type config =
   | Version of Version.t
   | Library of Library.t
 
-let build_content ?pub_name ?libs ~name =
-  let version = Version.create () in
-  let library = Library.create ?pub_name ?libs ~name () in
-  let buf = Buffer.create 1024 in
-  Buffer.(
-    add_string buf (Version.to_string version);
-    add_string buf (Library.to_string library);
-    contents buf
-  )
+type t = config list
 
-let generate ?(dir=Sys.getcwd ()) ?pub_name ?libs ~name () =
+let create () =
+  let version = Version.create () in
+  (Version version)::[]
+
+let add_library ?pub_name ?libs ~name t =
+  let library = Library.create ?pub_name ?libs ~name () in
+  (Library library)::t
+
+let to_string t =
+  let s = ListLabels.map ~f:(fun c ->
+    match c with
+      | Version v -> Version.to_string v
+      | Library v -> Library.to_string v
+  ) t in
+  let buf = Buffer.create 1024 in
+  ListLabels.iter ~f:(fun cs -> Buffer.add_string buf cs) s;
+  Buffer.contents buf
+
+let save ?(dir=Sys.getcwd ()) t =
   let create_jb_config_file = File.puts ~path:(dir ^ "/" ^ "jbuild") in
-  let build_config = build_content ?pub_name ?libs ~name in
-  match create_jb_config_file build_config with
+  match create_jb_config_file (to_string t) with
     | Ok file -> Ok ()
     | Error e -> Error (File.string_of_error e)

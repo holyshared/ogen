@@ -8,8 +8,15 @@
 
 type t
 
-val generate: ?dir:string ->
-  ?pub_name:string  ->
+val create: unit -> t
+
+val add_library: ?pub_name:string ->
   ?libs:string list ->
-  name:string  ->
-  unit -> (unit, string) result
+  name:string ->
+  t -> t
+
+val to_string: t  -> string
+
+val save: ?dir:string ->
+  t ->
+  (unit, string) result
