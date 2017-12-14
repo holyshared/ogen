@@ -12,12 +12,13 @@ type file_error =
   | AlreadyClosed of string
 
 val path: t -> string
-val create: string -> (t, file_error) result
+val open_write: string -> (t, file_error) result
 val write_string: s:string -> t -> (t, file_error) result
 val write_buffer: buf:Buffer.t -> t -> (t, file_error) result
 val close: t -> (t, file_error) result
-val puts: path:string
-  -> string
-  -> (t, file_error) result
+val create:
+  ?content:string ->
+  path:string ->
+  (t, file_error) result
 val string_of_error: file_error -> string
 val is_closed: t -> bool
