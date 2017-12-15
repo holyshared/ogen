@@ -32,7 +32,7 @@ let process_if_file_opened t ~f =
   if is_closed t then Error (already_closed t)
   else f t
 
-let create path =
+let open_write path =
   try
     Ok {
       path = path;
@@ -58,7 +58,10 @@ let close t =
 
 let path t = t.path
 
-let puts ~path s =
-  create path
-  |> bind ~f:(write_string ~s)
-  |> bind ~f:close
+let create ?content ~path =
+  let to_string = function
+    | Some v -> v
+    | None -> "" in
+  open_write path
+    |> bind ~f:(write_string ~s:(to_string content))
+    |> bind ~f:close

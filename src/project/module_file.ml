@@ -7,12 +7,29 @@
 
 open Ogen_filesystem
 
-let put_content = function
+let content_of = function
   | Some v -> v
   | None -> ""
 
+let create_files ?content ~dir ~name =
+  let file_path = dir ^ "/" ^ name in
+  let files = [
+    ((file_path ^ ".ml"), content);
+    ((file_path ^ ".mli"), None)
+  ] in
+  let create files =
+    let rec create_all files =
+      match files with
+        | [] -> Ok ()
+        | hd::tail ->
+          let path, content = hd in
+          match File.create ~path ?content with
+            | Ok _ -> create_all tail
+            | Error e -> Error e in
+    create_all files in
+  create files
+
 let generate ?(dir=Sys.getcwd ()) ?content ~name () =
-  let create_ml_file = File.puts ~path:(dir ^ "/" ^ name ^ ".ml") in
-  match create_ml_file (put_content content) with
+  match create_files ~dir ~name ?content with
     | Ok file -> Ok ()
     | Error e -> Error (File.string_of_error e)
