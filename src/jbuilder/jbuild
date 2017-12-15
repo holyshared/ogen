@@ -3,6 +3,7 @@
 (library (
   (public_name ogen.jbuilder)
   (name ogen_jbuilder)
+  (library_flags -linkall)
   (libraries (sexplib sexp_pretty ogen.file_system))
-  (preprocess (pps (ppx_type_conv ppx_sexp_conv ppx_driver.runner)))
+  (preprocess (pps (ppx_jane ppx_type_conv ppx_sexp_conv ppx_driver.runner)))
 ))
