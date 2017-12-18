@@ -67,11 +67,13 @@ let create ?content ~path =
     |> bind ~f:close
 
 let%test_module _ = (module struct
+  open Base
+  open Sexplib.Conv
   exception Assert_error of string
   let%test_unit "create a new file" =
-    let temp_dir = Filename.get_temp_dir_name () in
+    let temp_dir = Caml.Filename.get_temp_dir_name () in
     let test_file = temp_dir ^ "/" ^ "test.txt" in
     match create ~content:"ok" ~path:test_file with
-      | Ok f -> assert ((path f) = test_file)
+      | Ok f -> [%test_eq: string] (path f) test_file
       | Error e -> raise (Assert_error (string_of_error e))
 end)

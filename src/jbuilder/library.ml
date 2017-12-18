@@ -37,16 +37,18 @@ let to_string t =
   Pretty_print.sexp_to_string (sexp_of_config_format ("library", t))
 
 let%test_module _ = (module struct
+  open Base
+
   let%test_unit "configuration of library" =
     let name_by s = create ~name:s ~pub_name:s in
     let lib_conf = name_by "test" () in
-    assert ((name lib_conf) = "test");
-    assert ((public_name lib_conf) = (Some "test"));
-    assert ((libraries lib_conf) = None)
+    [%test_eq: string] (name lib_conf) "test";
+    [%test_eq: string option] (public_name lib_conf) (Some "test");
+    [%test_eq: string list option] (libraries lib_conf) None
 
   let%test_unit "configuration to string" =
     let name_by s = create ~name:s ~pub_name:s () in
     let expected = "(library (\n  (name        test)\n  (public_name test)))\n" in
     let acutual = to_string (name_by "test") in
-    assert (acutual = expected)
+    [%test_eq: string] acutual expected
 end)
