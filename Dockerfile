@@ -1,6 +1,6 @@
 FROM holyshared/ocaml:latest
 ENV DEBIAN_FRONTEND noninteractive
-MAINTAINER Noritaka Horio <holy.shared.design@gmail.com>
+LABEL maintainer "Noritaka Horio <holy.shared.design@gmail.com>"
 RUN sudo -u develop sh -c 'opam install -y jbuilder sexplib sexp_pretty cmdliner ppx_jane'
 WORKDIR project
 COPY ogen.opam ogen.opam

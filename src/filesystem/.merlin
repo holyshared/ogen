@@ -3,6 +3,7 @@ FLG -open Ogen_filesystem -w -40
 FLG -ppx '/Users/holyshared/Documents/projects/ocaml-gen/_build/default/.ppx/ppx_jane+ppx_driver.runner/ppx.exe --as-ppx --cookie '\''library-name="ogen_filesystem"'\'''
 PKG base
 PKG base.caml
+PKG base.md5
 PKG base.shadow_stdlib
 PKG bigarray
 PKG bin_prot
@@ -22,3 +23,4 @@ PKG sexplib.0
 PKG typerep
 PKG unix
 PKG variantslib
+S .

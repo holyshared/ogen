@@ -5,6 +5,7 @@ B ../../_build/default/src/project
 FLG -open Ogen_cli -w -40
 PKG base
 PKG base.caml
+PKG base.md5
 PKG base.shadow_stdlib
 PKG bigarray
 PKG bin_prot
@@ -31,6 +32,7 @@ PKG sexplib.0
 PKG typerep
 PKG unix
 PKG variantslib
+S .
 S ../filesystem
 S ../jbuilder
 S ../project

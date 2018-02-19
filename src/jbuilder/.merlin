@@ -4,6 +4,7 @@ FLG -open Ogen_jbuilder -w -40
 FLG -ppx '/Users/holyshared/Documents/projects/ocaml-gen/_build/default/.ppx/ppx_jane+ppx_sexp_conv+ppx_type_conv+ppx_driver.runner/ppx.exe --as-ppx --cookie '\''library-name="ogen_jbuilder"'\'''
 PKG base
 PKG base.caml
+PKG base.md5
 PKG base.shadow_stdlib
 PKG bigarray
 PKG bin_prot
@@ -28,4 +29,5 @@ PKG sexplib.0
 PKG typerep
 PKG unix
 PKG variantslib
+S .
 S ../filesystem

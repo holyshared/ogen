@@ -23,4 +23,4 @@ let of_sexp = t_of_sexp
 
 let to_string t =
   let open Sexp_pretty in
-  Pretty_print.sexp_to_string (sexp_of_config_format ("jbuild_version", t))
+  sexp_to_string (sexp_of_config_format ("jbuild_version", t))
