@@ -38,10 +38,10 @@ ogen mod -o src/xyz example
 ## Install
 
 You can install using opam.  
-The compiler version of OCaml must be **4.06.0** or higher.
+The compiler version of OCaml must be **4.06.1** or higher.
 
 ```shell
-opam switch 4.06.0
+opam switch 4.06.1
 opam pin add ogen https://github.com/holyshared/ogen.git
 ```
 
