@@ -23,7 +23,7 @@ B /Users/holyshared/.opam/4.06.1/lib/sexplib0
 B /Users/holyshared/.opam/4.06.1/lib/typerep
 B /Users/holyshared/.opam/4.06.1/lib/variantslib
 FLG -open Ogen_filesystem -w -40
-FLG -ppx '/Users/holyshared/Documents/projects/ogen/_build/default/.ppx/ppx_jane+ppx_driver.runner/ppx.exe --as-ppx --cookie '\''library-name="ogen_filesystem"'\'''
+FLG -ppx '/Users/holyshared/Documents/projects/ogen/_build/default/.ppx/ppx_jane+ppxlib.runner/ppx.exe --as-ppx --cookie '\''library-name="ogen_filesystem"'\'''
 S .
 S /Users/holyshared/.opam/4.06.1/lib/base
 S /Users/holyshared/.opam/4.06.1/lib/base/caml
