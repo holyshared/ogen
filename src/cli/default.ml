@@ -8,7 +8,7 @@
 open Cmdliner
 
 let name = "ogen"
-let version = "0.1.0"
+let version = "0.2.1"
 let doc = "Code generator for OCaml"
 
 let term =
