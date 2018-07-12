@@ -1,7 +1,0 @@
-(jbuild_version 1)
-
-(executables(
-  (names (ogen))
-  (public_names (ogen))
-  (libraries (ogen.project ogen.cli cmdliner))
-))

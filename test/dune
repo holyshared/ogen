@@ -1,0 +1,14 @@
+(executable
+  (name test_runner)
+  (libraries ppx_inline_test.runner.lib ogen.cli ogen.file_system ogen.jbuilder ogen.project)
+)
+
+(alias
+  (name runtest)
+  (deps test_runner.exe)
+  (action (run ${<} inline-test-runner ogen_filesystem -verbose -diff-cmd "diff -u --label actual --label expected")))
+
+(alias
+  (name runtest)
+  (deps test_runner.exe)
+  (action (run ${<} inline-test-runner ogen_jbuilder -verbose -diff-cmd "diff -u --label actual --label expected")))

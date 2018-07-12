@@ -9,15 +9,15 @@ bug-reports: "https://github.com/holyshared/ogen/issues"
 dev-repo: "https://github.com/holyshared/ogen.git"
 
 build: [
-  ["jbuilder" "build" "-p" name "-j" jobs]
+  ["dune" "build" "-p" name "-j" jobs]
 ]
 
 build-test: [
-  ["jbuilder" "runtest" "-p" name]
+  ["dune" "runtest" "-p" name]
 ]
 
 depends: [
-  "jbuilder" {build}
+  "dune" {build}
   "sexplib" {>= "0.10.0"}
   "sexp_pretty" {>= "0.10.0"}
 ]

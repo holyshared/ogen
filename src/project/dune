@@ -1,0 +1,5 @@
+(library
+  (public_name ogen.project)
+  (name ogen_project)
+  (libraries sexplib ogen.file_system ogen.jbuilder)
+)
