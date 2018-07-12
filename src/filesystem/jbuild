@@ -1,9 +1,0 @@
-(jbuild_version 1)
-
-(library (
-  (public_name ogen.file_system)
-  (name ogen_filesystem)
-  (library_flags -linkall)
-  (libraries (sexplib))
-  (preprocess (pps (ppx_jane ppxlib.runner)))
-))

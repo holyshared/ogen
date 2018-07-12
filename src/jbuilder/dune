@@ -1,0 +1,7 @@
+(library
+  (public_name ogen.jbuilder)
+  (name ogen_jbuilder)
+  (library_flags -linkall)
+  (libraries sexplib sexp_pretty ogen.file_system)
+  (preprocess (pps ppx_jane ppxlib.runner))
+)

@@ -8,8 +8,6 @@
 open Sexplib
 open Conv
 
-let is_none v =
-  v = None
 
 type t = int [@@deriving sexp]
 
