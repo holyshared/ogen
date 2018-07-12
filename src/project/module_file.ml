@@ -7,9 +7,6 @@
 
 open Ogen_filesystem
 
-let content_of = function
-  | Some v -> v
-  | None -> ""
 
 let create_files ?content ~dir ~name =
   let file_path = dir ^ "/" ^ name in
@@ -31,5 +28,5 @@ let create_files ?content ~dir ~name =
 
 let generate ?(dir=Sys.getcwd ()) ?content ~name () =
   match create_files ~dir ~name ?content with
-    | Ok file -> Ok ()
+    | Ok _ -> Ok ()
     | Error e -> Error (File.string_of_error e)

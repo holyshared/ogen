@@ -9,7 +9,7 @@ open Cmdliner
 open Ogen_project
 open Ogen_filesystem
 
-let generate_module gopts output_dir mod_name =
+let generate_module _gopts output_dir mod_name =
   let dest_dir = Directory.from_cwd ?output:output_dir () in
   let mod_gen = Module_file.generate ~dir:dest_dir
                 |> (fun gf -> gf ~content:"")
