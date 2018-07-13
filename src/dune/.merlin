@@ -24,8 +24,8 @@ B /Users/holyshared/.opam/4.06.1/lib/sexplib
 B /Users/holyshared/.opam/4.06.1/lib/sexplib0
 B /Users/holyshared/.opam/4.06.1/lib/typerep
 B /Users/holyshared/.opam/4.06.1/lib/variantslib
+B ../../_build/default/src/dune/.ogen_dune.objs
 B ../../_build/default/src/filesystem/.ogen_filesystem.objs
-B ../../_build/default/src/jbuilder/.ogen_jbuilder.objs
 S /Users/holyshared/.opam/4.06.1/lib/base
 S /Users/holyshared/.opam/4.06.1/lib/base/caml
 S /Users/holyshared/.opam/4.06.1/lib/base/md5
@@ -52,7 +52,7 @@ S /Users/holyshared/.opam/4.06.1/lib/sexplib
 S /Users/holyshared/.opam/4.06.1/lib/sexplib0
 S /Users/holyshared/.opam/4.06.1/lib/typerep
 S /Users/holyshared/.opam/4.06.1/lib/variantslib
-S ../filesystem
 S .
-FLG -ppx '/Users/holyshared/Documents/projects/ogen/_build/default/.ppx/ppx_jane+ppxlib.runner/ppx.exe --as-ppx --cookie '\''library-name="ogen_jbuilder"'\'''
-FLG -open Ogen_jbuilder -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs
+S ../filesystem
+FLG -ppx '/Users/holyshared/Documents/projects/ogen/_build/default/.ppx/ppx_jane+ppxlib.runner/ppx.exe --as-ppx --cookie '\''library-name="ogen_dune"'\'''
+FLG -open Ogen_dune -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs

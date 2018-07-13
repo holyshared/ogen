@@ -24,8 +24,8 @@ B /Users/holyshared/.opam/4.06.1/lib/sexplib
 B /Users/holyshared/.opam/4.06.1/lib/sexplib0
 B /Users/holyshared/.opam/4.06.1/lib/typerep
 B /Users/holyshared/.opam/4.06.1/lib/variantslib
+B ../../_build/default/src/dune/.ogen_dune.objs
 B ../../_build/default/src/filesystem/.ogen_filesystem.objs
-B ../../_build/default/src/jbuilder/.ogen_jbuilder.objs
 B ../../_build/default/src/project/.ogen_project.objs
 S /Users/holyshared/.opam/4.06.1/lib/base
 S /Users/holyshared/.opam/4.06.1/lib/base/caml
@@ -53,7 +53,7 @@ S /Users/holyshared/.opam/4.06.1/lib/sexplib
 S /Users/holyshared/.opam/4.06.1/lib/sexplib0
 S /Users/holyshared/.opam/4.06.1/lib/typerep
 S /Users/holyshared/.opam/4.06.1/lib/variantslib
+S ../dune
 S ../filesystem
-S ../jbuilder
 S .
 FLG -open Ogen_project -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs

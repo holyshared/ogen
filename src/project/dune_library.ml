@@ -5,7 +5,7 @@
  * with this source code in the file LICENSE.
 *)
 
-open Ogen_jbuilder
+open Ogen_dune
 
 let generate ?(dir=Sys.getcwd ()) ?pub_name ?libs ~name () =
   Config.(
