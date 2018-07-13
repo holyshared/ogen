@@ -8,14 +8,11 @@
 open Ogen_filesystem
 
 type config =
-  | Version of Version.t
-  | Library of Library.t
+  Library of Library.t
 
 type t = config list
 
-let create () =
-  let version = Version.create () in
-  (Version version)::[]
+let create () = []
 
 let add_library ?pub_name ?libs ~name t =
   let library = Library.create ?pub_name ?libs ~name () in
@@ -24,7 +21,6 @@ let add_library ?pub_name ?libs ~name t =
 let to_string t =
   let s = ListLabels.map ~f:(fun c ->
     match c with
-      | Version v -> Version.to_string v
       | Library v -> Library.to_string v
   ) t in
   let buf = Buffer.create 1024 in
