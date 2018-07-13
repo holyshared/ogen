@@ -33,7 +33,7 @@ let term =
   let exits = Term.default_exits in
   let man = [
     `S Manpage.s_description;
-    `P "Create a jbuilder configuration file for library package";
+    `P "Create a dune configuration file for library package";
     `Blocks Common_options.help_secs;
   ] in
   let action = Term.(ret Term.(const generate_library $ Common_options.gopts_t $ pub_name $ output_dir $ lib_name)) in

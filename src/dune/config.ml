@@ -28,7 +28,7 @@ let to_string t =
   Buffer.contents buf
 
 let save ?(dir=Sys.getcwd ()) t =
-  let create_jb_config_file = File.create ~path:(dir ^ "/" ^ "jbuild") in
-  match create_jb_config_file ~content:(to_string t) with
+  let create_dune_config_file = File.create ~path:(dir ^ "/" ^ "dune") in
+  match create_dune_config_file ~content:(to_string t) with
     | Ok _ -> Ok ()
     | Error e -> Error (File.string_of_error e)
