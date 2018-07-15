@@ -18,5 +18,4 @@ val name: t -> string
 val public_name: t -> string option
 val libraries: t -> string list option
 val to_sexp: t -> Sexp.t
-val of_sexp: Sexp.t -> t
 val to_string: t -> string
