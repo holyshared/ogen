@@ -1,0 +1,5 @@
+(library
+  (public_name ogen.opam_package)
+  (name ogen_opam_package)
+  (libraries mustache ogen.file_system)
+)
