@@ -5,11 +5,11 @@
  * with this source code in the file LICENSE.
 *)
 
-open Sexplib
+open Ogen_dune
 
-type t
-
-val create: ?vnum:int -> unit -> t
-val to_sexp: t -> Sexp.t
-val of_sexp: Sexp.t -> t
-val to_string: t -> string
+let generate ?(dir=Sys.getcwd ()) ?pub_name ?libs ~name () =
+  Config.(
+    create ()
+      |> add_library ?pub_name ?libs ~name
+      |> save ~dir
+  )

@@ -8,14 +8,11 @@
 open Ogen_filesystem
 
 type config =
-  | Version of Version.t
-  | Library of Library.t
+  Library of Library.t
 
 type t = config list
 
-let create () =
-  let version = Version.create () in
-  (Version version)::[]
+let create () = []
 
 let add_library ?pub_name ?libs ~name t =
   let library = Library.create ?pub_name ?libs ~name () in
@@ -24,7 +21,6 @@ let add_library ?pub_name ?libs ~name t =
 let to_string t =
   let s = ListLabels.map ~f:(fun c ->
     match c with
-      | Version v -> Version.to_string v
       | Library v -> Library.to_string v
   ) t in
   let buf = Buffer.create 1024 in
@@ -32,7 +28,7 @@ let to_string t =
   Buffer.contents buf
 
 let save ?(dir=Sys.getcwd ()) t =
-  let create_jb_config_file = File.create ~path:(dir ^ "/" ^ "jbuild") in
-  match create_jb_config_file ~content:(to_string t) with
+  let create_dune_config_file = File.create ~path:(dir ^ "/" ^ "dune") in
+  match create_dune_config_file ~content:(to_string t) with
     | Ok _ -> Ok ()
     | Error e -> Error (File.string_of_error e)
