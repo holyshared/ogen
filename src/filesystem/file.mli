@@ -7,18 +7,20 @@
 
 type t
 
-type file_error =
-  | CreateFailed of string
-  | AlreadyClosed of string
+module File_error: sig
+  type t
+  val create_failed: string -> t
+  val already_closed: string -> t
+  val to_string: t -> string
+end
 
 val path: t -> string
-val open_write: string -> (t, file_error) result
-val write_string: s:string -> t -> (t, file_error) result
-val write_buffer: buf:Buffer.t -> t -> (t, file_error) result
-val close: t -> (t, file_error) result
+val open_write: string -> (t, File_error.t) result
+val write_string: s:string -> t -> (t, File_error.t) result
+val write_buffer: buf:Buffer.t -> t -> (t, File_error.t) result
+val close: t -> (t, File_error.t) result
 val create:
   ?content:string ->
   path:string ->
-  (t, file_error) result
-val string_of_error: file_error -> string
+  (t, File_error.t) result
 val is_closed: t -> bool

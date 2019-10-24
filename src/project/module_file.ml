@@ -29,4 +29,4 @@ let create_files ?content ~dir ~name =
 let generate ?(dir=Sys.getcwd ()) ?content ~name () =
   match create_files ~dir ~name ?content with
     | Ok _ -> Ok ()
-    | Error e -> Error (File.string_of_error e)
+    | Error e -> Error (File.File_error.to_string e)

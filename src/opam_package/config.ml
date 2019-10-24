@@ -76,4 +76,4 @@ let save ?(dir=Sys.getcwd ()) t =
   let content = render_template (to_json t) in
   match File.create ~content:content ~path:(output_file ~dir t.name) with
     | Ok _ -> Ok ()
-    | Error e -> Error (File.string_of_error e)
+    | Error e -> Error (File.File_error.to_string e)

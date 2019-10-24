@@ -11,9 +11,19 @@ type t = {
   closed: bool
 }
 
-type file_error =
-  | CreateFailed of string
-  | AlreadyClosed of string
+module File_error = struct
+  type t =
+    | CreateFailed of string
+    | AlreadyClosed of string
+
+  let create_failed path = CreateFailed (Printf.sprintf "%s is closed" path)
+  let already_closed path = AlreadyClosed (Printf.sprintf "%s is closed" path)
+
+  let to_string = function
+    | CreateFailed s -> s
+    | AlreadyClosed s -> s
+end
+
 
 let bind ~f = function
   | Ok t -> f t
@@ -21,15 +31,14 @@ let bind ~f = function
 
 let is_closed t = t.closed
 
-let already_closed t =
-  AlreadyClosed (Printf.sprintf "%s is closed" t.path)
+let create_failed path =
+  File_error.create_failed path
 
-let string_of_error = function
-  | CreateFailed s -> s
-  | AlreadyClosed s -> s
+let already_closed path =
+  File_error.already_closed path
 
 let process_if_file_opened t ~f =
-  if is_closed t then Error (already_closed t)
+  if is_closed t then Error (already_closed t.path)
   else f t
 
 let open_write path =
@@ -39,7 +48,7 @@ let open_write path =
       channel = (open_out path);
       closed = false
     }
-  with Sys_error e -> Error (CreateFailed e)
+  with Sys_error e -> Error (create_failed e)
 
 let write_string ~s t =
   let wrtie_to_file t =
@@ -75,5 +84,5 @@ let%test_module _ = (module struct
     let test_file = temp_dir ^ "/" ^ "test.txt" in
     match create ~content:"ok" ~path:test_file with
       | Ok f -> [%test_eq: string] (path f) test_file
-      | Error e -> raise (Assert_error (string_of_error e))
+      | Error e -> raise (Assert_error (File_error.to_string e))
 end)

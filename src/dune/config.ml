@@ -31,4 +31,4 @@ let save ?(dir=Sys.getcwd ()) t =
   let create_dune_config_file = File.create ~path:(dir ^ "/" ^ "dune") in
   match create_dune_config_file ~content:(to_string t) with
     | Ok _ -> Ok ()
-    | Error e -> Error (File.string_of_error e)
+    | Error e -> Error (File.File_error.to_string e)
