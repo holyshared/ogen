@@ -2,5 +2,5 @@
   (public_name ogen.cli)
   (name ogen_cli)
   (libraries cmdliner ogen.project)
-  (modules command common_options library module default)
+  (modules command common_options library module opam default)
 )
