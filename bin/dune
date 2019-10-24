@@ -3,3 +3,9 @@
   (public_names ogen)
   (libraries ogen.project ogen.cli cmdliner)
 )
+
+(install
+  (files ../templates/opam.mustache)
+  (section share)
+  (package ogen)
+)

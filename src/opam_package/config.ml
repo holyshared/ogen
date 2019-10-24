@@ -59,7 +59,10 @@ let to_json t =
   `O fields
 
 let mustache_template =
-  let input = (open_in "opam.mustache") in
+  let prefix = match Sys.getenv_opt "OPAM_SWITCH_PREFIX" with
+    | Some v -> v
+    | None -> "" in
+  let input = (open_in (prefix ^ "/share/ogen/opam.mustache")) in
   let template = really_input_string input (in_channel_length input) in
   close_in input;
   Mustache.of_string template
