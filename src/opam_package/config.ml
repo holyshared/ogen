@@ -7,9 +7,9 @@ module Repo = struct
     bug_report: string option;
   }
 
-  let create ?homepage ?bug_report url =
+  let create ?homepage ?bug_report ?url () =
     {
-      url = Some url;
+      url = url;
       homepage = homepage;
       bug_report = bug_report
     }
@@ -33,27 +33,29 @@ let create ?maintainer ?author ?license ?repo name =
   }
 
 let to_json t =
+  let some v = v in
+
+  let get ?(defaultv="") value = 
+    Option.fold ~none:defaultv ~some:some value in
+
   let add_string_prop name value o =
-    match value with
-      | Some v -> (name, (`String v))::o
-      | None -> o in
+    (name, (`String value))::o in
 
   let add_repo_prop repo o =
-    let open Repo in
-    match repo with
-      | Some v ->
-          begin
-            o |>
-            add_string_prop "homepage" v.homepage |>
-            add_string_prop "bug_report" v.bug_report |>
-            add_string_prop "dev_repo" v.url
-          end
-      | None -> o in
+    let get_or_default repo =
+      Option.fold ~none:(Repo.create ()) ~some:some repo in
+    let add_repo v o =
+      let open Repo in
+      o |>
+        add_string_prop "homepage" (get v.homepage) |>
+        add_string_prop "bug_report" (get v.bug_report) |>
+        add_string_prop "dev_repo" (get v.url) in
+    add_repo (get_or_default repo) o in
 
   let fields = [ ("name", `String t.name) ] |>
-    add_string_prop "maintainer" t.maintainer |>
-    add_string_prop "author" t.author |>
-    add_string_prop "license" t.license |>
+    add_string_prop "maintainer" (get t.maintainer) |>
+    add_string_prop "author" (get t.author) |>
+    add_string_prop "license" (get t.license) |>
     add_repo_prop t.repo in
 
   `O fields

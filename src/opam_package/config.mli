@@ -1,6 +1,6 @@
 module Repo: sig
   type t
-  val create: ?homepage:string -> ?bug_report:string -> string -> t
+  val create: ?homepage:string -> ?bug_report:string -> ?url:string -> unit -> t
 end
 
 type t
