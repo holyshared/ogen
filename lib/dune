@@ -1,7 +1,7 @@
 (library
   (public_name ogen.project)
   (name ogen_project)
-  (libraries sexplib mustache ogen.file_system ogen.dune)
+  (libraries sexp_pretty sexplib mustache cmdliner)
   (library_flags -linkall)
   (preprocess (pps ppx_jane ppxlib.runner))
 )

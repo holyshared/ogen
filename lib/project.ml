@@ -17,7 +17,7 @@ module Library_project = struct
 end
 
 module Dune_library = struct
-  open Ogen_dune
+  open Dune_project
 
   let generate ?(dir=Sys.getcwd ()) ?pub_name ?libs ~name () =
     Config.(
@@ -28,7 +28,7 @@ module Dune_library = struct
 end
 
 module Module_file = struct
-  open Ogen_filesystem
+  open Filesystem
 
   let create_files ?content ~dir ~name =
     let file_path = dir ^ "/" ^ name in

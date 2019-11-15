@@ -5,7 +5,7 @@
  * with this source code in the file LICENSE.
  *)
 
-open Ogen_filesystem
+open Filesystem
 
 module Config = struct
   module Repo = struct

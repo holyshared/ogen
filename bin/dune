@@ -1,7 +1,7 @@
 (executables
   (names ogen)
   (public_names ogen)
-  (libraries ogen.project ogen.cli cmdliner)
+  (libraries ogen.project cmdliner)
 )
 
 (install
