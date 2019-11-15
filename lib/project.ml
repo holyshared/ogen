@@ -62,3 +62,12 @@ module Opam_file = struct
       create name |> save ~dir
     )
 end
+
+module Makefile = struct
+  open Makefile
+
+  let generate ?(dir=Sys.getcwd ()) ?(name="Makefile") () =
+    Template.(
+      copy_to (dir ^ "/" ^ name)
+    )
+end

@@ -5,7 +5,7 @@
 )
 
 (install
-  (files ../templates/opam.mustache)
+  (files ../templates/opam.mustache ../templates/default.mk)
   (section share)
   (package ogen)
 )

@@ -122,11 +122,19 @@ module Opam = struct
   open Filesystem
   open Project
 
-  let generate_opam_file _gopts output_dir pkg_name =
+  let generate_opam_project_files _gopts output_dir pkg_name =
     let dest_dir = Directory.from_cwd ?output:output_dir () in
-    match Opam_file.generate ~dir:dest_dir ~name:pkg_name () with
-      | Ok _ -> `Ok ()
-      | Error e -> `Error (false, e)
+    let rec execute tasks =
+      match tasks with
+        | [] -> `Ok ()
+        | hd::tail ->
+          match hd () with
+            | Ok _ -> execute tail
+            | Error e -> `Error (false, e) in
+    execute [
+      Opam_file.generate ~dir:dest_dir ~name:pkg_name;
+      Makefile.generate ~dir:dest_dir
+    ]
 
   let term =
     let output_dir =
@@ -144,8 +152,7 @@ module Opam = struct
       `P "Create an opam file with the specified name.";
       `Blocks Common_options.help_secs;
     ] in
-    let action = Term.(ret Term.(const generate_opam_file $ Common_options.gopts_t $ output_dir $ pkg_name)) in
+    let action = Term.(ret Term.(const generate_opam_project_files $ Common_options.gopts_t $ output_dir $ pkg_name)) in
     let action_info = Term.info "opam" ~doc ~sdocs:Manpage.s_common_options ~exits ~man in
     action, action_info
 end
-

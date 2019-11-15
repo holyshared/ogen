@@ -34,3 +34,7 @@ module Opam_file: sig
     -> unit
     -> (unit, string) result
 end
+
+module Makefile: sig
+  val generate: ?dir:string -> ?name:string -> unit -> (unit, string) result
+end
