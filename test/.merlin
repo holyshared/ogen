@@ -12,6 +12,8 @@ B /Users/holyshared/.opam/4.09.0/lib/jane-street-headers
 B /Users/holyshared/.opam/4.09.0/lib/menhirLib
 B /Users/holyshared/.opam/4.09.0/lib/mustache
 B /Users/holyshared/.opam/4.09.0/lib/ocaml
+B /Users/holyshared/.opam/4.09.0/lib/ogen/dune
+B /Users/holyshared/.opam/4.09.0/lib/ogen/file_system
 B /Users/holyshared/.opam/4.09.0/lib/parsexp
 B /Users/holyshared/.opam/4.09.0/lib/ppx_assert/runtime-lib
 B /Users/holyshared/.opam/4.09.0/lib/ppx_bench/runtime-lib
@@ -36,11 +38,8 @@ B /Users/holyshared/.opam/4.09.0/lib/stdio
 B /Users/holyshared/.opam/4.09.0/lib/time_now
 B /Users/holyshared/.opam/4.09.0/lib/typerep
 B /Users/holyshared/.opam/4.09.0/lib/variantslib
+B ../_build/default/lib/.ogen_project.objs/byte
 B ../_build/default/src/cli/.ogen_cli.objs/byte
-B ../_build/default/src/dune/.ogen_dune.objs/byte
-B ../_build/default/src/filesystem/.ogen_filesystem.objs/byte
-B ../_build/default/src/opam_package/.ogen_opam_package.objs/byte
-B ../_build/default/src/project/.ogen_project.objs/byte
 B ../_build/default/test/.test_runner.eobjs/byte
 S /Users/holyshared/.opam/4.09.0/lib/base
 S /Users/holyshared/.opam/4.09.0/lib/base/caml
@@ -55,6 +54,8 @@ S /Users/holyshared/.opam/4.09.0/lib/jane-street-headers
 S /Users/holyshared/.opam/4.09.0/lib/menhirLib
 S /Users/holyshared/.opam/4.09.0/lib/mustache
 S /Users/holyshared/.opam/4.09.0/lib/ocaml
+S /Users/holyshared/.opam/4.09.0/lib/ogen/dune
+S /Users/holyshared/.opam/4.09.0/lib/ogen/file_system
 S /Users/holyshared/.opam/4.09.0/lib/parsexp
 S /Users/holyshared/.opam/4.09.0/lib/ppx_assert/runtime-lib
 S /Users/holyshared/.opam/4.09.0/lib/ppx_bench/runtime-lib
@@ -79,10 +80,7 @@ S /Users/holyshared/.opam/4.09.0/lib/stdio
 S /Users/holyshared/.opam/4.09.0/lib/time_now
 S /Users/holyshared/.opam/4.09.0/lib/typerep
 S /Users/holyshared/.opam/4.09.0/lib/variantslib
+S ../lib
 S ../src/cli
-S ../src/dune
-S ../src/filesystem
-S ../src/opam_package
-S ../src/project
 S .
 FLG -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs
