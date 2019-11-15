@@ -20,9 +20,10 @@ module Dune_library = struct
   open Dune_project
 
   let generate ?(dir=Sys.getcwd ()) ?pub_name ?libs ~name () =
+    let lib_pub_name = Option.value pub_name ~default:name in
     Config.(
       create ()
-        |> add_library ?pub_name ?libs ~name
+        |> add_library ~pub_name:lib_pub_name ?libs ~name
         |> save ~dir
     )
 end
