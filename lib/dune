@@ -1,5 +1,5 @@
 (library
   (public_name ogen.project)
   (name ogen_project)
-  (libraries sexplib ogen.file_system ogen.dune ogen.opam_package)
+  (libraries sexplib mustache ogen.file_system ogen.dune)
 )

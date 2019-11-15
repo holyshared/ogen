@@ -55,7 +55,7 @@ module Module_file = struct
 end
 
 module Opam_file = struct
-  open Ogen_opam_package
+  open Opam_package
 
   let generate ?(dir=Sys.getcwd ()) ~name () =
     Config.(
