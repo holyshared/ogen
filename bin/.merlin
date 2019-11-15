@@ -36,11 +36,11 @@ B /Users/holyshared/.opam/4.09.0/lib/time_now
 B /Users/holyshared/.opam/4.09.0/lib/typerep
 B /Users/holyshared/.opam/4.09.0/lib/variantslib
 B ../_build/default/bin/.ogen.eobjs/byte
+B ../_build/default/lib/.ogen_project.objs/byte
 B ../_build/default/src/cli/.ogen_cli.objs/byte
 B ../_build/default/src/dune/.ogen_dune.objs/byte
 B ../_build/default/src/filesystem/.ogen_filesystem.objs/byte
 B ../_build/default/src/opam_package/.ogen_opam_package.objs/byte
-B ../_build/default/src/project/.ogen_project.objs/byte
 S /Users/holyshared/.opam/4.09.0/lib/base
 S /Users/holyshared/.opam/4.09.0/lib/base/caml
 S /Users/holyshared/.opam/4.09.0/lib/base/md5
@@ -78,9 +78,9 @@ S /Users/holyshared/.opam/4.09.0/lib/time_now
 S /Users/holyshared/.opam/4.09.0/lib/typerep
 S /Users/holyshared/.opam/4.09.0/lib/variantslib
 S .
+S ../lib
 S ../src/cli
 S ../src/dune
 S ../src/filesystem
 S ../src/opam_package
-S ../src/project
 FLG -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs

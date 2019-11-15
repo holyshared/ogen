@@ -6,7 +6,7 @@
 *)
 
 open Cmdliner
-open Ogen_project
+open Ogen_project.Project
 open Ogen_filesystem
 
 let generate_module _gopts output_dir mod_name =

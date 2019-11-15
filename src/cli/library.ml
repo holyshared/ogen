@@ -6,7 +6,7 @@
 *)
 
 open Cmdliner
-open Ogen_project
+open Ogen_project.Project
 open Ogen_filesystem
 
 let generate_library _gopts pub_name output_dir lib_name =
