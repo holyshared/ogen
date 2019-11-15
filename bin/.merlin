@@ -35,8 +35,8 @@ B /Users/holyshared/.opam/4.09.0/lib/stdio
 B /Users/holyshared/.opam/4.09.0/lib/time_now
 B /Users/holyshared/.opam/4.09.0/lib/typerep
 B /Users/holyshared/.opam/4.09.0/lib/variantslib
-B ../_build/default/bin/.ogen.eobjs/byte
-B ../_build/default/lib/.ogen_project.objs/byte
+B ../_build/default/bin/.main.eobjs/byte
+B ../_build/default/lib/.ogen.objs/byte
 S /Users/holyshared/.opam/4.09.0/lib/base
 S /Users/holyshared/.opam/4.09.0/lib/base/caml
 S /Users/holyshared/.opam/4.09.0/lib/base/md5

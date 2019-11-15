@@ -1,5 +1,5 @@
 open Cmdliner
-open Ogen_project.Cli
+open Ogen.Cli
 
 let commands = [ Library.term; Module.term; Opam.term ]
 
