@@ -1,6 +1,6 @@
 (executable
   (name test_runner)
-  (libraries ppx_inline_test.runner.lib ogen.cli ogen.file_system ogen.dune ogen.project)
+  (libraries ppx_inline_test.runner.lib ogen)
 )
 
 (alias

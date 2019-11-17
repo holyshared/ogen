@@ -1,5 +1,11 @@
 (executables
-  (names ogen)
+  (names main)
   (public_names ogen)
-  (libraries ogen.project ogen.cli cmdliner)
+  (libraries ogen cmdliner)
+)
+
+(install
+  (files ../templates/opam.mustache ../templates/default.mk)
+  (section share)
+  (package ogen)
 )

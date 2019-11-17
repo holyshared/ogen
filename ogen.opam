@@ -1,4 +1,4 @@
-opam-version: "1.2"
+opam-version: "2.0"
 name: "ogen"
 version: "0.3.1"
 maintainer: "holy.shared.design@gmail.com"
@@ -20,5 +20,7 @@ depends: [
   "dune" {build}
   "sexplib" {>= "0.10.0"}
   "sexp_pretty" {>= "0.10.0"}
+  "mustache" {>= "3.0.0"}
 ]
+
 available: [ ocaml-version >= "4.06.0" ]

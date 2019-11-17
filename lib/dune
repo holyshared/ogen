@@ -1,0 +1,7 @@
+(library
+  (public_name ogen)
+  (name ogen)
+  (libraries sexp_pretty sexplib mustache cmdliner)
+  (library_flags -linkall)
+  (preprocess (pps ppx_jane ppxlib.runner))
+)

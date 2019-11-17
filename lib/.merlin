@@ -22,7 +22,6 @@ B /Users/holyshared/.opam/4.09.0/lib/ppx_expect/common
 B /Users/holyshared/.opam/4.09.0/lib/ppx_expect/config
 B /Users/holyshared/.opam/4.09.0/lib/ppx_hash/runtime-lib
 B /Users/holyshared/.opam/4.09.0/lib/ppx_inline_test/config
-B /Users/holyshared/.opam/4.09.0/lib/ppx_inline_test/runner/lib
 B /Users/holyshared/.opam/4.09.0/lib/ppx_inline_test/runtime-lib
 B /Users/holyshared/.opam/4.09.0/lib/ppx_module_timer/runtime
 B /Users/holyshared/.opam/4.09.0/lib/ppx_sexp_conv/runtime-lib
@@ -37,7 +36,6 @@ B /Users/holyshared/.opam/4.09.0/lib/time_now
 B /Users/holyshared/.opam/4.09.0/lib/typerep
 B /Users/holyshared/.opam/4.09.0/lib/variantslib
 B ../_build/default/lib/.ogen.objs/byte
-B ../_build/default/test/.test_runner.eobjs/byte
 S /Users/holyshared/.opam/4.09.0/lib/base
 S /Users/holyshared/.opam/4.09.0/lib/base/caml
 S /Users/holyshared/.opam/4.09.0/lib/base/md5
@@ -61,7 +59,6 @@ S /Users/holyshared/.opam/4.09.0/lib/ppx_expect/common
 S /Users/holyshared/.opam/4.09.0/lib/ppx_expect/config
 S /Users/holyshared/.opam/4.09.0/lib/ppx_hash/runtime-lib
 S /Users/holyshared/.opam/4.09.0/lib/ppx_inline_test/config
-S /Users/holyshared/.opam/4.09.0/lib/ppx_inline_test/runner/lib
 S /Users/holyshared/.opam/4.09.0/lib/ppx_inline_test/runtime-lib
 S /Users/holyshared/.opam/4.09.0/lib/ppx_module_timer/runtime
 S /Users/holyshared/.opam/4.09.0/lib/ppx_sexp_conv/runtime-lib
@@ -75,6 +72,6 @@ S /Users/holyshared/.opam/4.09.0/lib/stdio
 S /Users/holyshared/.opam/4.09.0/lib/time_now
 S /Users/holyshared/.opam/4.09.0/lib/typerep
 S /Users/holyshared/.opam/4.09.0/lib/variantslib
-S ../lib
 S .
-FLG -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs
+FLG -ppx '/Users/holyshared/Documents/projects/ogen/_build/default/.ppx/c1073b35d0a9c5bfbdbc3b68dc5c504f/ppx.exe --as-ppx --cookie '\''library-name="ogen"'\'''
+FLG -open Ogen -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs
