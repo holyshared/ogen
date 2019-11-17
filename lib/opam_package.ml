@@ -68,16 +68,16 @@ module Config = struct
 
     `O fields
 
-  let mustache_template =
+  let mustache_template path =
     let prefix = match Sys.getenv_opt "OPAM_SWITCH_PREFIX" with
       | Some v -> v
       | None -> "" in
-    let input = (open_in (prefix ^ "/share/ogen/opam.mustache")) in
+    let input = (open_in (prefix ^ path)) in
     let template = really_input_string input (in_channel_length input) in
     close_in input;
     Mustache.of_string template
 
-  let render_template = Mustache.render mustache_template
+  let render_template template = Mustache.render (mustache_template template)
 
   let output_file ?dir name =
     let opam_file = name ^ ".opam" in
@@ -86,7 +86,7 @@ module Config = struct
       | None -> opam_file
 
   let save ?(dir=Sys.getcwd ()) t =
-    let content = render_template (to_json t) in
+    let content = render_template "/share/ogen/opam.mustache" (to_json t) in
     match File.create ~content:content ~path:(output_file ~dir t.name) with
       | Ok _ -> Ok ()
       | Error e -> Error (File.File_error.to_string e)
