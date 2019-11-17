@@ -1,6 +1,6 @@
 # ogen
 
-[![Build Status](https://travis-ci.org/holyshared/ogen.svg?branch=master)](https://travis-ci.org/holyshared/ogen)
+[![Build Status](https://travis-ci.com/holyshared/ogen.svg?branch=master)](https://travis-ci.com/holyshared/ogen)
 
 ogen is a generator of OCaml source of build configuration file.    
 The configuration file will generate [jbuilder](https://github.com/janestreet/jbuilder) configuration file.
