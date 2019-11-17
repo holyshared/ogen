@@ -5,8 +5,8 @@ RUN sudo -u develop sh -c 'opam install -y dune sexplib sexp_pretty cmdliner ppx
 WORKDIR project
 COPY ogen.opam ogen.opam
 COPY bin bin
-COPY src src
+COPY lib lib
 COPY test test
 COPY Makefile Makefile
 COPY .travis .travis
-RUN sudo chown -R develop:develop ogen.opam bin src test Makefile .travis
+RUN sudo chown -R develop:develop ogen.opam bin lib test Makefile .travis
